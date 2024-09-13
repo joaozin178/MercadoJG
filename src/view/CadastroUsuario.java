@@ -6,11 +6,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class CadastroUsuario extends JFrame {
 
@@ -111,19 +115,31 @@ public class CadastroUsuario extends JFrame {
 		textField_5.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Cancelar");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+			}
+		});
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton.setBounds(282, 161, 89, 23);
+		btnNewButton.setBounds(282, 180, 128, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Criar conta");
+		btnNewButton_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				JOptionPane.showMessageDialog(btnNewButton_1, "Usuario cadastrado com sucesso", "Mensagem", JOptionPane.QUESTION_MESSAGE);
+			}
+		});
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(282, 209, 89, 23);
+		btnNewButton_1.setBounds(282, 209, 128, 23);
 		contentPane.add(btnNewButton_1);
 	}
 }

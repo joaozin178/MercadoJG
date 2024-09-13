@@ -58,14 +58,10 @@ public class Pessoa {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	
 	@Override
 	public String toString() {
 		return "Pessoa [idade=" + idade + ", cpf=" + cpf + ", nome=" + nome + ", rg=" + rg + ", email=" + email
-				+ ", telefone=" + telefone + ", getIdade()=" + getIdade() + ", getCpf()=" + getCpf() + ", getNome()="
-				+ getNome() + ", getRg()=" + getRg() + ", getEmail()=" + getEmail() + ", getTelefone()=" + getTelefone()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+				+ ", telefone=" + telefone + "]";
 	}
 	
 	
