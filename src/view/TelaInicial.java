@@ -48,18 +48,40 @@ public class TelaInicial extends JFrame {
 		JMenu mnNewMenu_1 = new JMenu("Contas");
 		menuBar.add(mnNewMenu_1);
 		
-		JMenuItem mntmNewMenuItem = new JMenuItem("Criar conta");
+		JMenuItem mntmNewMenuItem = new JMenuItem("Criar clien");
 		mntmNewMenuItem.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				CadastroUsuario cadastrousuario = new CadastroUsuario();
-				cadastrousuario.setVisible(true);
+				CadastroCli cadastrocli = new CadastroCli();
+				cadastrocli.setVisible(true);
 				
 			}
 		});
 		
-		JMenuItem mntmNewMenuItem_5 = new JMenuItem("Contas");
-		mnNewMenu_1.add(mntmNewMenuItem_5);
+		JMenu mnNewMenu_6 = new JMenu("Contas");
+		mnNewMenu_1.add(mnNewMenu_6);
+		
+		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Clientes");
+		mntmNewMenuItem_9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		mnNewMenu_6.add(mntmNewMenuItem_9);
+		
+		JMenuItem mntmNewMenuItem_10 = new JMenuItem("Funcionarios");
+		mnNewMenu_6.add(mntmNewMenuItem_10);
 		mnNewMenu_1.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Criar func");
+		mntmNewMenuItem_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CadastroFun cadastroFun = new CadastroFun();
+				cadastroFun.setVisible(true);
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_8);
+		
+		JMenu mnNewMenu = new JMenu("");
+		menuBar.add(mnNewMenu);
 		
 		JMenu mnNewMenu_2 = new JMenu("Estoque");
 		menuBar.add(mnNewMenu_2);
@@ -71,6 +93,12 @@ public class TelaInicial extends JFrame {
 		mnNewMenu_5.add(mntmNewMenuItem_4);
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Editar");
+		mntmNewMenuItem_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Edit_prod edit_prod = new Edit_prod();
+				edit_prod.setVisible(true);
+			}
+		});
 		mnNewMenu_5.add(mntmNewMenuItem_6);
 		
 		JMenuItem mntmNewMenuItem_7 = new JMenuItem("add_prod");

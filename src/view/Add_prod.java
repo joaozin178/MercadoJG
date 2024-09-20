@@ -10,6 +10,11 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.JButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JComboBox;
+import javax.swing.JCheckBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Add_prod extends JFrame {
 
@@ -94,11 +99,23 @@ public class Add_prod extends JFrame {
 		textField_4.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Cancelar");
+		btnNewButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				dispose();
+			}
+		});
 		btnNewButton.setBounds(195, 227, 89, 23);
 		contentPane.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Criar");
 		btnNewButton_1.setBounds(311, 227, 89, 23);
 		contentPane.add(btnNewButton_1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alimento", "Farmácia", "Limpeza"}));
+		comboBox.setToolTipText("Tipo prod");
+		comboBox.setBounds(241, 97, 149, 22);
+		contentPane.add(comboBox);
 	}
 }

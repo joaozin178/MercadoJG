@@ -59,26 +59,26 @@ public class Contato extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Fone: +55 983793001");
-		lblNewLabel_1.setBounds(10, 47, 113, 14);
+		lblNewLabel_1.setBounds(10, 47, 210, 14);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Email: joaogbarros@aluno.colegiodom.com.br");
-		lblNewLabel_2.setBounds(10, 72, 236, 14);
+		lblNewLabel_2.setBounds(10, 72, 333, 14);
 		contentPane.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("José carlos - Touca :P");
-		lblNewLabel_3.setBounds(10, 109, 113, 14);
+		lblNewLabel_3.setBounds(10, 109, 177, 14);
 		contentPane.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("João gabriel gomes - JG :b");
-		lblNewLabel_4.setBounds(10, 133, 133, 14);
+		lblNewLabel_4.setBounds(10, 133, 177, 14);
 		contentPane.add(lblNewLabel_4);
 		
 		JButton btnNewButton = new JButton("Voltar");
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				contentPane.setVisible(false);
+				dispose();
 			}
 		});
 		btnNewButton.addActionListener(new ActionListener() {
