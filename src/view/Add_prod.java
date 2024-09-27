@@ -2,6 +2,7 @@ package view;
 
 import java.awt.EventQueue;
 
+import produto.Produtos;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -15,15 +16,19 @@ import java.awt.event.MouseEvent;
 import javax.swing.JComboBox;
 import javax.swing.JCheckBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Add_prod extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField INome;
+	private JTextField IValidade;
+	private JTextField ICod;
+	private JTextField IPreço;
+	
+
 
 	/**
 	 * Launch the application.
@@ -70,7 +75,7 @@ public class Add_prod extends JFrame {
 		lblNewLabel_3.setBounds(241, 72, 46, 14);
 		contentPane.add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("Validade");
+		JLabel lblNewLabel_4 = new JLabel("Codigo");
 		lblNewLabel_4.setBounds(10, 132, 46, 14);
 		contentPane.add(lblNewLabel_4);
 		
@@ -78,25 +83,25 @@ public class Add_prod extends JFrame {
 		lblNewLabel_5.setBounds(121, 132, 46, 14);
 		contentPane.add(lblNewLabel_5);
 		
-		textField = new JTextField();
-		textField.setBounds(10, 97, 86, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
+		INome = new JTextField();
+		INome.setBounds(10, 97, 86, 20);
+		contentPane.add(INome);
+		INome.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(121, 97, 86, 20);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
+		IValidade = new JTextField();
+		IValidade.setBounds(121, 97, 86, 20);
+		contentPane.add(IValidade);
+		IValidade.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(10, 157, 86, 20);
-		contentPane.add(textField_3);
-		textField_3.setColumns(10);
+		ICod = new JTextField();
+		ICod.setBounds(10, 157, 86, 20);
+		contentPane.add(ICod);
+		ICod.setColumns(10);
 		
-		textField_4 = new JTextField();
-		textField_4.setBounds(121, 157, 86, 20);
-		contentPane.add(textField_4);
-		textField_4.setColumns(10);
+		IPreço = new JTextField();
+		IPreço.setBounds(121, 157, 86, 20);
+		contentPane.add(IPreço);
+		IPreço.setColumns(10);
 		
 		JButton btnNewButton = new JButton("Cancelar");
 		btnNewButton.addMouseListener(new MouseAdapter() {
@@ -108,14 +113,24 @@ public class Add_prod extends JFrame {
 		btnNewButton.setBounds(195, 227, 89, 23);
 		contentPane.add(btnNewButton);
 		
-		JButton btnNewButton_1 = new JButton("Criar");
-		btnNewButton_1.setBounds(311, 227, 89, 23);
-		contentPane.add(btnNewButton_1);
-		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alimento", "Farmácia", "Limpeza"}));
-		comboBox.setToolTipText("Tipo prod");
-		comboBox.setBounds(241, 97, 149, 22);
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Alimentação", "Farmácia", "Limpeza"}));
+		comboBox.setBounds(241, 96, 112, 22);
 		contentPane.add(comboBox);
+		
+		JButton btnCriar = new JButton("Criar");
+		btnCriar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Produtos produtos = new Produtos(INome.getText(),ICod.getText(),IPreço.getText(),comboBox.getSelectedItem(),IValidade.getText());
+				
+				System.out.println("Nome do produto: " +produtos.getNome());
+				System.out.println("Codigo do prod: " +produtos.getCod());
+				System.out.println("Preço prod: " +produtos.getPreço());
+				System.out.println("Tip_prod: " +produtos.getTip_prod());
+				System.out.println("Validade do produto: " +produtos.getValidade());
+			}
+		});
+		btnCriar.setBounds(317, 227, 89, 23);
+		contentPane.add(btnCriar);
 	}
 }

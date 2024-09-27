@@ -56,19 +56,6 @@ public class TelaInicial extends JFrame {
 				
 			}
 		});
-		
-		JMenu mnNewMenu_6 = new JMenu("Contas");
-		mnNewMenu_1.add(mnNewMenu_6);
-		
-		JMenuItem mntmNewMenuItem_9 = new JMenuItem("Clientes");
-		mntmNewMenuItem_9.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		mnNewMenu_6.add(mntmNewMenuItem_9);
-		
-		JMenuItem mntmNewMenuItem_10 = new JMenuItem("Funcionarios");
-		mnNewMenu_6.add(mntmNewMenuItem_10);
 		mnNewMenu_1.add(mntmNewMenuItem);
 		
 		JMenuItem mntmNewMenuItem_8 = new JMenuItem("Criar func");
@@ -80,6 +67,9 @@ public class TelaInicial extends JFrame {
 		});
 		mnNewMenu_1.add(mntmNewMenuItem_8);
 		
+		JMenu mnNewMenu_6 = new JMenu("contas");
+		mnNewMenu_1.add(mnNewMenu_6);
+		
 		JMenu mnNewMenu = new JMenu("");
 		menuBar.add(mnNewMenu);
 		
@@ -88,9 +78,6 @@ public class TelaInicial extends JFrame {
 		
 		JMenu mnNewMenu_5 = new JMenu("Produtos");
 		mnNewMenu_2.add(mnNewMenu_5);
-		
-		JMenuItem mntmNewMenuItem_4 = new JMenuItem("Ver");
-		mnNewMenu_5.add(mntmNewMenuItem_4);
 		
 		JMenuItem mntmNewMenuItem_6 = new JMenuItem("Editar");
 		mntmNewMenuItem_6.addActionListener(new ActionListener() {

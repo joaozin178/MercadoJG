@@ -1,12 +1,16 @@
 package produto;
 
-public class Produtos {
+import javax.swing.JFrame;
+
+public class Produtos extends JFrame {
 	
 	private String nome;
-	private int cod;
-	private int preço;
-	private String tip_prod;
+	private String cod;
+	private String preço;
+	private Object tip_prod;
 	public String validade;
+	
+	
 	
 	
 	public String getNome() {
@@ -15,19 +19,19 @@ public class Produtos {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public int getCod() {
+	public String getCod() {
 		return cod;
 	}
-	public void setCod(int cod) {
+	public void setCod(String cod) {
 		this.cod = cod;
 	}
-	public int getPreço() {
+	public String getPreço() {
 		return preço;
 	}
-	public void setPreço(int preço) {
+	public void setPreço(String preço) {
 		this.preço = preço;
 	}
-	public String getTip_prod() {
+	public Object getTip_prod() {
 		return tip_prod;
 	}
 	public void setTip_prod(String tip_prod) {
@@ -39,10 +43,15 @@ public class Produtos {
 	public void setValidade(String validade) {
 		this.validade = validade;
 	}
-	@Override
-	public String toString() {
-		return "Produtos [nome=" + nome + ", cod=" + cod + ", preço=" + preço + ", tip_prod=" + tip_prod + ", validade="
-				+ validade + "]";
+	public Produtos(String nome, String cod, String preço, Object tip_prod, String validade) {
+		super();
+		this.nome = nome;
+		this.cod = cod;
+		this.preço = preço;
+		this.tip_prod = tip_prod;
+		this.validade = validade;
 	}
+	
+
 	
 }
